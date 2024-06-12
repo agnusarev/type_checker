@@ -15,10 +15,7 @@ black:
 flake8:
 	poetry run flake8 --ignore=E226,E302,E41,W191,W503 --max-complexity=13 --max-line-length=120 src
 
-.PHONY: mypy
-mypy:
+.PHONY: typing
+typing:
 	poetry run mypy src
-
-.PHONY: pyright
-pyright:
 	poetry run pyright src

@@ -15,7 +15,7 @@ jobs:
         python-version: ["3.12"]
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@main
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
@@ -28,9 +28,7 @@ jobs:
         # source "$(poetry env info --path)"/scripts/activate
         poetry install
 
-    - name: Run mypy
-      run: poetry run mypy src
+    - name: Run typing check
+      run: |
+        make typing
     
-    - name: Run pyright
-      run: poetry run pyright src
-
