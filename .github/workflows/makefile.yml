@@ -1,4 +1,4 @@
-name: Makefile CI
+name: Type checking
 
 on:
   push:
@@ -24,8 +24,6 @@ jobs:
     - name: Install dependencies
       run: |
         python3 -m pip install poetry
-        # poetry config virtualenvs.in-project true
-        # source "$(poetry env info --path)"/scripts/activate
         poetry install
 
     - name: Run typing check
