@@ -9,9 +9,8 @@ from typing import Callable, TypeVar, Any
 
 F = TypeVar("F", bound=Callable[..., Any])
 
-# test
 
-def decorator(message: str):
+def decorator(message: str) -> Callable:
     def inner(func: F) -> F:
         return func
 
